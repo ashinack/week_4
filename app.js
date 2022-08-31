@@ -32,8 +32,8 @@ app.use(session({
   }
 }))
 
-app.use('/', indexRouter);
-app.use('/login',loginRouter);
+app.use('/index', indexRouter);
+app.use('/',loginRouter);
 app.use('/cart',cartRouter);
 app.use('/users', usersRouter);
 

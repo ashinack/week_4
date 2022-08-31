@@ -33,51 +33,51 @@ router.get('/', function(req, res, next) {
   res.render('index',{products} );
 });
 
-router.get('/login', function(req, res, next) {
+// router.get('/', function(req, res, next) {
    
- res.header('Cache-control','no-cache,private, no-store, must-revalidate,max-stale=0,post-check=0,pre-check=0');
-   if(req.session.login){
-       res.redirect('/')
-   }else{
- res.render('login',{'loginErr':req.session.loginErr});
-  req.session.loginErr=false;  
- }
+//  res.header('Cache-control','no-cache,private, no-store, must-revalidate,max-stale=0,post-check=0,pre-check=0');
+//    if(req.session.login){
+//        res.redirect('/index')
+//    }else{
+//  res.render('login',{'loginErr':req.session.loginErr});
+//   req.session.loginErr=false;  
+//  }
 
   
     
   
  
   
-});
+// });
 
 
-const username = 'ashina'
-const password = 'password'
+// const username = 'ashina'
+// const password = 'password'
 
-router.post('/submit',(req, res)=>{
-   res.header('Cache-control','no-cache,private, no-store, must-revalidate,max-stale=0,post-check=0,pre-check=0');
-  console.log(req.body)
-  const user= req.body.username
-  const pw = req.body.pw
-console.log(user)
+// router.post('/submit',(req, res)=>{
+//    res.header('Cache-control','no-cache,private, no-store, must-revalidate,max-stale=0,post-check=0,pre-check=0');
+//   console.log(req.body)
+//   const user= req.body.username
+//   const pw = req.body.pw
+// console.log(user)
 
-  if (user === username && pw === password){
-    req.session.login=true
-    res.redirect('/');
-  }else{
-    req.session.loginErr=true;
-    res.redirect('/login')
+//   if (user === username && pw === password){
+//     req.session.login=true
+//     res.redirect('/');
+//   }else{
+//     req.session.loginErr=true;
+//     res.redirect('/login')
     
 
-  }
+//   }
 
-  res.end()
-})
+//   res.end()
+// })
 router.get('/logout',(req,res)=>{
   
   req.session.destroy();
   
-  res.redirect('/login')
+  res.redirect('/')
 });
 
 module.exports = router;
