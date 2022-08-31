@@ -1,0 +1,58 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light nav-back-color bg-dark ">
+    <div class="container-fluid ">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand text-white" href="/">home</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#">Products</a>
+          </li>
+          {{!-- <li class="nav-item">
+            <a class="nav-link text-white" href="/cart">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled text-white">Orders</a>
+          </li> --}}
+        </ul>
+        <form class="d-flex">
+          {{!-- <a href="" class="text-dark" style="text-decoration: none;">Log out</a> --}}
+          {{!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> --}}
+          {{!-- <a href="/logout" class="btn btn-light" type="button" onclick="preventBack()">Logout</a> --}}
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+<section>
+  <div class="container mt-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Title</th>
+          <th scope="col">Category</th>
+          <th scope="col">Description</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each products}}
+        <tr>
+          <th scope="row">{{this.no}}</th>
+
+          <td>{{this.name}}</td>
+
+          <td>{{this.Category}}</td>
+          <td>{{this.Description}}</td>
+          <td><img style="width: 50px; height:50px" src="{{this.image}}" alt=""></td>
+        </tr>
+        {{/each}}
+
+      </tbody>
+    </table>
+  </div>
+</section>
